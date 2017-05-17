@@ -12,9 +12,10 @@ Career: Software developer(Android)
 
 #### 2.My Links
 Blog: <https://wangyuansxya.github.io/>  
+Github:<https://github.com/wangyuansxya/wangyuansxya.github.io/>
 
 #### 3.Contract
-Email: wangyuansxya#163.com  
+Email: wangyuansxya@163.com  
 QQ: 292449150  
 
 ### 4.Domain For Sale
