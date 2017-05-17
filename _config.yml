@@ -21,7 +21,7 @@ all_categories: [
 
 paginate: 8
 paginate_path: "posts/page:num"
-timezone: China/Beijing
+timezone: America/Los_Angeles
 
 collections:
   docs:
@@ -29,3 +29,4 @@ collections:
 
 gems:
  - jekyll-paginate
+ 
