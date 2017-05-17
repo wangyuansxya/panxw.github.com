@@ -13,7 +13,7 @@ tags: [Android,性能，内存，优化]
 原因是因为View刷新的时候，ondraw方法可能会执行多次，如果在这里创建对象，可能导致UI上的卡顿
 2.加载图片的时候使用Option对图片进行压缩  <br>
 3.字符串的拼接。使用StringBuilder(线程安全的)和StringBuffer(线程非安全的)。<br>
-如果不存在多线程操作的情况下，使用StringBuffer。不要使用String+String的形式
+如果不存在多线程操作的情况下，使用StringBuffer。不要使用String+String的形式<br>
 4.使用Android提供的ArrayMap和SpareArry代替使用HashMap。  <br>
 因为前者更剩内存，效率更高<br>
 5.防止出现内存抖动的情况。避免在短时间内频繁的创建和销毁相同的对象<br>
