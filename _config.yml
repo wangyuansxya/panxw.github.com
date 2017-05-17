@@ -11,8 +11,8 @@ url: https://wangyuansxya.github.io/
 domain: https://wangyuansxya.github.io/
 all_categories: [
 ["android", "Android开发","/posts/android.html"], 
-["ios", "IOS开发","/ios.html"],
-["git", "git相关","/git.html"], 
+["ios", "IOS开发","/posts/ios.html"],
+["git", "git相关","/posts/git.html"], 
 ["linux", "Linux相关","/posts/linux.html"],
 ["read", "读书笔记","/posts/read.html"], 
 ["other", "杂记","/posts/other.html"],
