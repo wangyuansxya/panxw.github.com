@@ -3,7 +3,7 @@ highlighter: pygments
 permalink: /posts/:title.html
 excerpt_separator: "<!-- more -->"
 
-github: wangyuansxya
+github: https://github.com/wangyuansxya/wangyuansxya.github.io
 author: "wangyuan"
 email: wangyuansxya@163.com
 name: "wangyuan个人博客"
@@ -21,7 +21,7 @@ all_categories: [
 
 paginate: 8
 paginate_path: "posts/page:num"
-timezone: America/Los_Angeles
+timezone: China/Beijing
 
 collections:
   docs:
