@@ -48,7 +48,7 @@ windows下下载ZIP格式较为方便，下好后解压到本地任意路径，�
 
 说明有程序在占用这个本地端口，这时候输入命令
 > $ netstat -ano
-
+![](https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/RubyGems/ip.png?raw=true)
 可以看到如下进程与所占用端口的对应情况，找到本地地址为 127.0.0.1:4000 的记录，看到该条记录的PID为6668 (当然你的和我的不一样)。
 
 输入命令
@@ -56,7 +56,11 @@ windows下下载ZIP格式较为方便，下好后解压到本地任意路径，�
 
 该进程的名称就会显示出来:
 
+![](https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/RubyGems/pid.png?raw=true)
+
 打开windows的任务管理器，结束它：
+
+![](https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/RubyGems/windows_tasks.png?raw=true)
 
 再次运行 jekyll serve 就可以了。
 
@@ -66,3 +70,19 @@ windows下下载ZIP格式较为方便，下好后解压到本地任意路径，�
 2.如果遇到以下错误：
 > to install this gem. The full error message from Ruby is: 'cannot load such fil e -- tzinfo' If you run into trouble
 
+则执行：
+
+> $gem install tzinfo
+
+3.如果遇到以下错误：
+
+> No source of timezone data could be found. (TZInfo::DataSourceNotFound)
+
+则执行：
+
+> gem install tzinfo-data
+
+即可解决
+
+
+参考文章地址：http://playingfingers.com/2016/03/26/build-a-blog/
