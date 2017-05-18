@@ -1,0 +1,15 @@
+---
+layout: post
+category: "android"
+title:  "使用git page搭建免费博客之本地编译环境搭建"
+tags: gitPage
+---
+<br>
+**一、本文说明**<br>
+本文是在已经使用gitpage搭建完成博客的基础上，并且已经安装好了git for windows等工具。 <br>
+本文是在Windows环境下安装的示例，Linux和Mac可以坐参考<br>
+**二、安装Jekyll本地编译环境**<br>
+1.使用gitpage写博客的时候，每次都需要commit-->push--等待gitPage刷新页面。 <br>
+效率很低，有没有可以在本地直接预览文章显示在页面上的方法呢？答案是有<br>
+2.安装[ruby](http://rubyinstaller.org/downloads/)<br>
+
