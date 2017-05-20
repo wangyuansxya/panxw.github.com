@@ -45,8 +45,7 @@ note:Google Play不接受没有经过zipalign的APK。<br>
 类似这样的app可以切分成2个进程：一个用来操作UI，另外一个用来后台的Service.<br>
 你可以通过在manifest文件中声明'android:process'属性来实现某个组件运行在另外一个进程的操作。<br>
 `<service android:name=".PlaybackService" 
-          android:process=":background" />`
-          
+          android:process=":background" />`          
 24.避免bitmaps的浪费。<br>
 当你加载一个bitmap时，仅仅需要保留适配当前屏幕设备分辨率的数据即可，如果原图高于你的设备分辨率，需要做缩小的动作。<br>请记住，增加bitmap的尺寸会对内存呈现出2次方的增加，因为X与Y都在增加。<br>
 25.当内存紧张时释放部分内存<br>
@@ -54,11 +53,8 @@ note:Google Play不接受没有经过zipalign的APK。<br>
 note:因为onTrimMemory()的回调是在API 14才被加进来的，对于老的版本，你可以使用onLowMemory)回调来进行兼容。onLowMemory相当与TRIM_MEMORY_COMPLETE。<br>
 26.检查你应该使用多少的内存<br>
 正如前面提到的，每一个Android设备都会有不同的RAM总大小与可用空间，因此不同设备为app提供了不同大小的heap限制。你可以通过调用getMemoryClass())来获取你的app的可用heap大小。如果你的app尝试申请更多的内存，会出现OutOfMemory的错误。<br>
-
 在一些特殊的情景下，你可以通过在manifest的application标签下添加largeHeap=true的属性来声明一个更大的heap空间。如果你这样做，你可以通过getLargeMemoryClass())来获取到一个更大的heap size。<br>
-
 然而，能够获取更大heap的设计本意是为了一小部分会消耗大量RAM的应用(例如一个大图片的编辑应用)。不要轻易的因为你需要使用大量的内存而去请求一个大的heap size。只有当你清楚的知道哪里会使用大量的内存并且为什么这些内存必须被保留时才去使用large heap. 因此请尽量少使用large heap。使用额外的内存会影响系统整体的用户体验，并且会使得GC的每次运行时间更长。在任务切换时，系统的性能会变得大打折扣。<br>
-
 另外, large heap并不一定能够获取到更大的heap。在某些有严格限制的机器上，large heap的大小和通常的heap size是一样的。因此即使你申请了large heap，你还是应该通过执行getMemoryClass()来检查实际获取到的heap大小。<br>
 27.珍惜Services资源<br>
 如果你的应用需要在后台使用service，除非它被触发并执行一个任务，否则其他时候service都应该是停止状态。另外需要注意当这个service完成任务之后因为停止service失败而引起的内存泄漏。<br>
