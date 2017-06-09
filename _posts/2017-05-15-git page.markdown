@@ -12,10 +12,10 @@ tags: gitPage
 1.使用gitpage写博客的时候，每次都需要commit-->push--等待gitPage刷新页面。 <br>
 效率很低，有没有可以在本地直接预览文章显示在页面上的方法呢？答案是有<br>
 2.安装[ruby](http://rubyinstaller.org/downloads/)<br>
-<img src="https://raw.githubusercontent.com/wangyuansxya/wangyuansxya.github.io/master/assets/ruby/rubyInstallers.png" style="zoom:80%" />
+<img src="https://raw.githubusercontent.com/wangyuansxya/wangyuansxya.github.io/master/assets/ruby/rubyInstallers.png" style="zoom:50%" />
 <br>
 注意：这里一定要勾选添加到环境变量PATH！<br>
-<img src="https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/ruby/ruby.png?raw=true" style="zoom:80%" />
+<img src="https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/ruby/ruby.png?raw=true" style="zoom:50%" />
 <br>
 3.安装 [RubyGems](https://rubygems.org/pages/download) <br>
 windows下下载ZIP格式较为方便，下好后解压到本地任意路径，下面以 {unzip-path} 代替你解压的路径。 <br>打开windows的cmd终端（按win+R快捷键打开“运行”，输入cmd，确定），输入命令:<br>
@@ -50,7 +50,8 @@ windows下下载ZIP格式较为方便，下好后解压到本地任意路径，�
 
 说明有程序在占用这个本地端口，这时候输入命令
 > $ netstat -ano
-<img src="https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/RubyGems/ip.png?raw=true" style="zoom:80%" />
+
+<img src="https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/RubyGems/ip.png?raw=true" style="zoom:50%" />
 
 可以看到如下进程与所占用端口的对应情况，找到本地地址为 127.0.0.1:4000 的记录，看到该条记录的PID为6668 (当然你的和我的不一样)。
 
@@ -59,12 +60,12 @@ windows下下载ZIP格式较为方便，下好后解压到本地任意路径，�
 
 该进程的名称就会显示出来:
 
-<img src="https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/RubyGems/pid.png?raw=true" style="zoom:80%" />
+<img src="https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/RubyGems/pid.png?raw=true" style="zoom:50%" />
 
 
 打开windows的任务管理器，结束它：
 
-<img src="https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/RubyGems/windows_tasks.png?raw=true" style="zoom:80%" />
+<img src="https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/RubyGems/windows_tasks.png?raw=true" style="zoom:50%" />
 
 再次运行 jekyll serve 就可以了。
 
