@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "android"
+category: "other"
 title:  "使用git page搭建免费博客之本地编译环境搭建"
 tags: gitPage
 ---
