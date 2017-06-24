@@ -84,6 +84,12 @@ CilpDrawable用来操作剪切板
 
 8，InsertDrawable顾名思义就是嵌入一个drawable。相当于设置Imageview的前景，然后给imageview设置相应的padding
 
+	<inset xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:drawable="@drawable/bg"
+	    android:inset="50dp"
+	    >
+	</inset>
+
 9，ClipDrawable对drawable进行裁剪操作，控制裁剪区域。android的进度条就是clipdrawable的一个实现，根据level的值来确定裁剪的区域。ClipDrawable通过　setLevel(int level)方法来设置裁剪的区域，level从0到10000。0为完全不显示(相当于完全裁剪)，10000为完全显示
 
 	<clip xmlns:android="http://schemas.android.com/apk/res/android"
