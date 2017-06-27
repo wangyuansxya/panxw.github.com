@@ -59,13 +59,13 @@ java代码示例(正序)：
 java代码示例(正序)：
 
 	public static void main(String[] args) {
-		// write your code here
-		int[] arr = {4, 2, 0, 5, 8, 9, 3, 5, 4};
-		final int len = arr.length;
-		quickSort(arr, 0, len - 1);
-		for (int i = 0; i < len - 1; i++) {
-		System.out.println(arr[i]);
-		}
+	// write your code here
+	int[] arr = {4, 2, 0, 5, 8, 9, 3, 5, 4};
+	final int len = arr.length;
+	quickSort(arr, 0, len - 1);
+	for (int i = 0; i < len - 1; i++) {
+	System.out.println(arr[i]);
+	}
 	}
 
 	// Sort a list of numbers in an array within [start, end]
@@ -95,6 +95,45 @@ java代码示例(正序)：
         return i;
     }
 		
+3,简单选择排序：
 
+在要排序的一组数中，选出最小（或者最大）的一个数与第1个位置的数交换；然后在剩下的数当中再找最小（或者最大）的与第2个位置的数交换，依次类推，直到第n-1个元素（倒数第二个数）和第n个元素（最后一个数）比较为止。
+
+操作方法：
+
+第一趟，从n 个记录中找出关键码最小的记录与第一个记录交换；
+
+第二趟，从第二个记录开始的n-1 个记录中再选出关键码最小的记录与第二个记录交换；
+
+以此类推.....
+
+第i 趟，则从第i 个记录开始的n-i+1 个记录中选出关键码最小的记录与第i 个记录交换，
+
+直到整个序列按关键码有序。
+
+java代码示例(正序)：
+
+	   public static void simpleSort(int[] arr) {
+        final int len = arr == null ? 0 : arr.length;
+        for (int i = 0; i < len; ++i) {
+            int max = getMax(arr, i);//获取最大的元素
+            if(max != i) {
+                int temp = arr[i];
+                arr[i] = arr[max];
+                arr[max] = temp;
+            }
+        }
+    }
+
+    public static int getMax(int[] arr, int start) {
+        final int len = arr == null ? 0 : arr.length;
+        int k = start;
+        for (int i = start; i < len; i++) {
+            if(arr[k] < arr[i]) {
+                k = i;
+            }
+        }
+        return k;
+    }
 
 	
