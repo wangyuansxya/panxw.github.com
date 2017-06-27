@@ -59,13 +59,13 @@ java代码示例(正序)：
 java代码示例(正序)：
 
 	public static void main(String[] args) {
-	// write your code here
-	int[] arr = {4, 2, 0, 5, 8, 9, 3, 5, 4};
-	final int len = arr.length;
-	quickSort(arr, 0, len - 1);
-	for (int i = 0; i < len - 1; i++) {
-	System.out.println(arr[i]);
-	}
+		// write your code here
+		int[] arr = {4, 2, 0, 5, 8, 9, 3, 5, 4};
+		final int len = arr.length;
+		quickSort(arr, 0, len - 1);
+		for (int i = 0; i < len - 1; i++) {
+		System.out.println(arr[i]);
+		}
 	}
 
 	// Sort a list of numbers in an array within [start, end]
@@ -113,7 +113,7 @@ java代码示例(正序)：
 
 java代码示例(正序)：
 
-	   public static void simpleSort(int[] arr) {
+	  public static void simpleSort(int[] arr) {
         final int len = arr == null ? 0 : arr.length;
         for (int i = 0; i < len; ++i) {
             int max = getMax(arr, i);//获取最大的元素
