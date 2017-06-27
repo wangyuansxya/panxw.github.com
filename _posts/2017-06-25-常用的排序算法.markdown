@@ -113,7 +113,7 @@ java代码示例(正序)：
 
 java代码示例(正序)：
 
-	  public static void simpleSort(int[] arr) {
+	public static void simpleSort(int[] arr) {
         final int len = arr == null ? 0 : arr.length;
         for (int i = 0; i < len; ++i) {
             int max = getMax(arr, i);//获取最大的元素
