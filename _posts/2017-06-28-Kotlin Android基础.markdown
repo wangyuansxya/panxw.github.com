@@ -7,6 +7,7 @@ tags: [kotlin, Android基础]
 **kotlin Android基础**
 
 1，实现一个基本的数据类
+
 	/**
 	 * kotlin定义的数据类，它会自动生成所有属性和它们的访问器，以及一些有用的方法，比如， toString()
 	 */
