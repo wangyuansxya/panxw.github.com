@@ -1,9 +1,0 @@
----
-layout: post
-category: "other"
-title:  "kotlin 类和对象"
-tags: [kotlin, 类和对象]
----
-**kotlin 类和对象**
-
-1，
