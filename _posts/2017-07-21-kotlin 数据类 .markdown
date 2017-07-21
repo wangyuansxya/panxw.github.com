@@ -1,0 +1,67 @@
+---
+layout: post
+category: "other"
+title:  "kotlin 数据类"
+tags: [kotlin, 数据类]
+---
+**kotlin 数据类**
+
+数据类是一种非常强大的类，它可以让你避免创建Java中的用于保存状态但又操作非常简单的POJO的模版代码。它们通常只提供了用于访问它们属性的简单的getter和setter。定义一个新的数据类非常简单：
+
+	data class Forecast(
+		val date: Date, 
+		val temperature: Float, 
+		val details: String
+	)
+
+1，额外的函数
+
+通过数据类，我们可以方便地得到很多有趣的函数，一部分是来自属性，我们之前已经讲过（从编写getter和setter函数） ：
+
+- equals(): 它可以比较两个对象的属性来确保他们是相同的。
+- hashCode(): 我们可以得到一个hash值，也是从属性中计算出来的。
+- copy(): 你可以拷贝一个对象，可以根据你的需要去修改里面的属性。我们会在稍后的例子中看到。
+- 一系列可以映射对象到变量中的函数。我也很快就会讲到这个。
+
+
+2，复制一个数据类
+
+如果我们使用不可修改的对象，就像我们之前讲过的，假如我们需要修改这个对象状态，必须要创建一个新的一个或者多个属性被修改的实例。这个任务是非常重复且不简洁的。
+
+	var adapter : KotlinBean = KotlinBean(StaticValue.VIEW, "View", "测试kotlin View");
+    val a1 = adapter.copy(name = "person");
+
+我们拷贝了第一个adapter对象然后只修改了 name 的属性而没有修改这个对象的其它状态
+3,执行一个请求
+
+对于感受我们要实现的想法而言，我们目前的文本是很好开始，但是现在是时候去请求一些显示在RecyclerView上的真正的数据了
+
+多亏Kotlin非常强大的互操作性，你可以使用任何你想使用的库，比如用Retrofit来执行服务器请求
+
+当只是执行一个简单的API请求，我们可以不使用任何第三方库来简单地实现
+
+	class Request(val url : String) {
+	    public fun run() {
+	        val result = URL(url).readText();
+	        Log.d("result", "result : $result");
+	    }
+	}
+
+我们使用 readText ，这是Kotlin标准库中的扩展函数。这个方法不推荐结果很大的响应
+
+4,在主线程以外执行请求
+
+如你所知，HTTP请求不被允许在主线程中执行，否则它会抛出异常。这是因为阻塞住UI线程是一个非常差的体验。Android中通用的做法是使用 AsyncTask，AsyncTasks 会非常危险，因为当运行到 postExecute 时，如
+果Activity已经被销毁了，这里就会崩溃。
+
+Anko提供了非常简单的DSL来处理异步任务，它满足大部分的需求。它提供了一个基本的 async 函数用于在其它线程执行代码，也可以选择通过调用 uiThread 的方式回到主线程
+
+	//执行一个异步的请求
+    async {
+        Request("www.baidu.com").run();
+        uiThread {  toast("从async回到了mainThread") }
+    }
+
+UIThread 有一个很不错的一点就是可以依赖于调用者。如果它是被一个 Activity 调用的，那么如果 activity.isFinishing() 返回 true ，则 uiThread 不会执行，这样就不会在Activity销毁的时候遇到崩溃的情况了。
+
+假如你想使用 Future 来工作， async 返回一个Java Future 。而且如果你需要一个返回结果的 Future ，你可以使用 asyncResult 。
