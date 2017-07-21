@@ -59,3 +59,28 @@ Kotlin由于互操作性的特性已经提供了这个属性
 
 当只是执行一个简单的API请求，我们可以不使用任何第三方库来简单地实现
 
+	class Request(val url : String) {
+	    public fun run() {
+	        val result = URL(url).readText();
+	        Log.d("result", "result : $result");
+	    }
+	}
+
+我们使用 readText ，这是Kotlin标准库中的扩展函数。这个方法不推荐结果很大的响应
+
+4,在主线程以外执行请求
+
+如你所知，HTTP请求不被允许在主线程中执行，否则它会抛出异常。这是因为阻塞住UI线程是一个非常差的体验。Android中通用的做法是使用 AsyncTask，AsyncTasks 会非常危险，因为当运行到 postExecute 时，如
+果Activity已经被销毁了，这里就会崩溃。
+
+Anko提供了非常简单的DSL来处理异步任务，它满足大部分的需求。它提供了一个基本的 async 函数用于在其它线程执行代码，也可以选择通过调用 uiThread 的方式回到主线程
+
+	//执行一个异步的请求
+    async {
+        Request("www.baidu.com").run();
+        uiThread {  toast("从async回到了mainThread") }
+    }
+
+UIThread 有一个很不错的一点就是可以依赖于调用者。如果它是被一个 Activity 调用的，那么如果 activity.isFinishing() 返回 true ，则 uiThread 不会执行，这样就不会在Activity销毁的时候遇到崩溃的情况了。
+
+假如你想使用 Future 来工作， async 返回一个Java Future 。而且如果你需要一个返回结果的 Future ，你可以使用 asyncResult 。
