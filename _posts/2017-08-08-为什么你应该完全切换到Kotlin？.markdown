@@ -321,7 +321,7 @@ verticalLayout {
 就给你一个小而美的例子吧！当我第一次从Stack Overflow复制Java代码时，它会弹出（这样的对话框）：
 
 
-![](https://cdn-images-1.medium.com/max/1600/1*zpE0UpuBDGW7Mk-Vtx2uKw.png)
+![](https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/1-zpE0UpuBDGW7Mk-Vtx2uKw.png?raw=true)
 
 **扩展阅读：**
 
