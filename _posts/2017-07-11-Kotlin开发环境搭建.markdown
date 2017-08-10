@@ -86,7 +86,16 @@ Extensions plugin 插件到dependencies。
 	
 Anko是一个用来简化一些Android任务的很强大的Kotlin库
 
-5，测试是否一切就绪
+5, 增加kolin代码sourceSet
+
+	sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            main.java.srcDirs += 'src/main/kotlin'
+        }
+    } 
+
+6，测试是否一切就绪
 
 首先，打开 activity_main.xml ，然后设置TextView的id：
 
