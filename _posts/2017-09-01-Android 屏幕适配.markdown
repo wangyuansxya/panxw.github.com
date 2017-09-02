@@ -61,6 +61,7 @@ tags: [屏幕适配, Android]
 ![](https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/dpi.jpg?raw=true)
 	
 	在设计图标时，对于五种主流的像素密度（MDPI、HDPI、XHDPI、XXHDPI 和 XXXHDPI）应按照 2:3:4:6:8 的比例进行缩放
+	
 ![](https://github.com/wangyuansxya/wangyuansxya.github.io/blob/master/assets/1x-2x-3x-4x.jpg?raw=true)
 
 6，支持各种屏幕尺寸
