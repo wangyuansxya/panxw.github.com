@@ -1,0 +1,22 @@
+---
+layout: post
+category: "android"
+title:  "Android 屏幕适配"
+tags: [屏幕适配, Android]
+---
+**Android 屏幕适配**
+
+1,为什么要做屏幕适配
+
+	由于android的开放性，各个手机厂商可以对其进行定制，
+
+2，match_patent属性对layout_weight的影响
+
+3，weight_num:声明总共由多少个weight
+
+4,android:layout_xxxxx:表面是布局相关的属性。这些属性是交给父控件来处理的
+
+5, 使用.9.patch图片
+
+6，
+	
