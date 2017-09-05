@@ -9,6 +9,8 @@ tags: [多渠道打包]
 　
 ## 1# 使用Android studio
 
+	在命令行工具下执行gradlew assemble
+
 ## 2# Android packer-ng-plugin 多渠道快速打包
 
 ## 3# 360加固助手,Umeng打包工具等
