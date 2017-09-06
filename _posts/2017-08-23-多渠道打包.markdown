@@ -27,4 +27,7 @@ tags: [多渠道打包]
 
 [https://tech.meituan.com/mt-apk-packaging.html](https://tech.meituan.com/mt-apk-packaging.html "美团Android自动化之旅—生成渠道包")
 
+https://github.com/Meituan-Dianping/walle
+
+
 [http://www.jianshu.com/p/06764b0d9e33](http://www.jianshu.com/p/06764b0d9e33 "【Android】多渠道打包，其实可以更快")
