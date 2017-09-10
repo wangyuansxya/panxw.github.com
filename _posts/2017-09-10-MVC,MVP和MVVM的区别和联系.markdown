@@ -4,7 +4,7 @@ category: "other"
 title:  "MVC，MVP和MVVM的区别和联系"
 tags: [MVC，MVP和MVVM的区别和联系]
 ---
-**j MVC，MVP和MVVM的区别和联系**
+**MVC，MVP和MVVM的区别和联系**
 
 1，	MVC（Model-View-Controller）是最常见的软件架构之一，业界有着广泛应用。它本身很容易理解，但是要讲清楚，它与衍生的 MVP 和 MVVM 架构的区别就不容易了。
 
