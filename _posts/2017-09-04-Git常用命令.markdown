@@ -38,3 +38,9 @@ cd到该文件夹
 
     find . -name ".git" | xargs rm -Rf
 
+9，修改上一次commit的author： git commit --amend --author='wangyuansxya<wangyuansxya@163.com>'
+
+10，删除远程分支：git push origin --delete master
+
+10，push本地分支到仓库，并关联本地和远程分支：git push origin --delete master
+
