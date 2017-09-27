@@ -1,0 +1,33 @@
+---
+layout: post
+category: "other"
+title:  "JAVA OOM分析方法"
+tags: [JAVA OOM分析方法]
+---
+**Java OOM**
+
+	public static void main(String[] args) {
+        System.out.println("Hello World!");
+        List<Object> l = new ArrayList<>();
+        while (true) {
+            l.add(new Object());
+        }
+    }
+
+运行结果：
+
+	Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:3210)
+	at java.util.Arrays.copyOf(Arrays.java:3181)
+	at java.util.ArrayList.grow(ArrayList.java:261)
+	at java.util.ArrayList.ensureExplicitCapacity(ArrayList.java:235)
+	at java.util.ArrayList.ensureCapacityInternal(ArrayList.java:227)
+	at java.util.ArrayList.add(ArrayList.java:458)
+
+出现java的堆内存溢出的时候：会提示 “java.lang.OutOfMemoryError”，进一步提示：“Java heap space”
+
+1，如果内存泄露：则可以通过eclipse的MAT内存分析工具，查看泄露对象的GC Roots的引用链，可以比较准确的定位出泄露代码都额位置
+
+2，如果不存在泄露，换句话说就是对象还必须存在。那就应该检查一下一些对象的生命周期是否过长，尝试减少程序运行时候的内存消耗
+
+以上是处理oom的简略的思路介绍
