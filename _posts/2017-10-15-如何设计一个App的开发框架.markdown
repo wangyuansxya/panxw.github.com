@@ -6,6 +6,8 @@ tags: [如何设计一个App的开发框架]
 ---
 **如何设计一个App的开发框架**
 
+最先开始需要确定的是使用MVC，MVP还是MVVM的架构
+
 1，通用的baseActivity（实现共用的title，loading，exception的功能）
 	
 	思考：title使用style和xml的方式那种更好一些
@@ -26,10 +28,16 @@ tags: [如何设计一个App的开发框架]
 
 8，基础数据的保存和初始化方法（用户名，账号等等）
 
-9，是否要使用hybrid App开发
+9，是否要使用hybrid App开发（比较优秀的框架就是react-native了）
 
 10，页面的跳转使用隐式的activity启动方式。这样的好处是降低页面之间的耦合
 
 11，基础规则就是高内聚，低耦合
+
+12，activity的跳转使用哪种方式，像使用隐式的Intent（路由模式）
+
+13，是否使用响应式编程，RXAndroid， RxJava
+
+14，
 
 以上是处理oom的简略的思路介绍
