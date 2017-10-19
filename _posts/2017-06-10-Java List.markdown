@@ -42,3 +42,13 @@ ArrayList适用于频繁的查询操作
 
 5,使用普通的 for loop去遍历linkedList效率是很低的
 
+6,list的遍历：
+
+推荐使用普通的For Loop访问时间是O（1），不会创建任何对象
+
+LinkedList，推荐使用Enhanced for loop
+
+对于未知的List泛型，使用Enhanced for loop，性能最好
+
+LinkedList适用于频繁的增删操作的情况
+
