@@ -15,3 +15,15 @@ tags: [ArrayList, 区别，优缺点]
 4，Vector是线程安全的，适合多线程下的编程。ArrayList,LinkedList是线程不安全的，适合单线程下的编程。因此Vector的操作比ArrayList,LinkedList开销要大
 
 5，LinkedList适合增删操作，因为只需要改变指针，而查询某个元素必须从第一个开始，因此时间复杂度是O(n)。ArrayList 适合查询操作，查询某个元素的时间复杂度是O(1);
+
+6,list的遍历：
+
+推荐使用普通的For Loop访问时间是O（1），不会创建任何对象
+
+LinkedList，推荐使用Enhanced for loop
+
+对于未知的List泛型，使用Enhanced for loop，性能最好
+
+LinkedList适用于频繁的增删操作的情况
+
+ArrayList适用于频繁的查询操作
