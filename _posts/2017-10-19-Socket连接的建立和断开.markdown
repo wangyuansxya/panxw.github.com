@@ -1,0 +1,15 @@
+---
+layout: post
+category: "other"
+title:  "Socket连接的建立和断开"
+tags: [Socket连接的建立和断开]
+---
+**Socket连接的建立和断开**
+
+Socket建立连接是三次握手，断开是四次握手
+
+一，建立连接
+	
+	
+
+二，断开连接
