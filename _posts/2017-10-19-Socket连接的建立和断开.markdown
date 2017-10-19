@@ -1,15 +1,38 @@
 ---
 layout: post
 category: "other"
-title:  "Socket连接的建立和断开"
-tags: [Socket连接的建立和断开]
+title:  "网络编程"
+tags: [网络编程]
 ---
-**Socket连接的建立和断开**
+**网络编程**
+
+基于Http协议的网络编程和基于Socket协议的网络编程
+
+一，Socket连接的建立和断开
+
+Socket是基于TCP／IP协议的来实现的。提供了更高的传输效率。是Java层最低层次的网络编程接口。
+
+在Java中要操作更低层次的只有使用JNI了，基本属于本地语言的范畴
 
 Socket建立连接是三次握手，断开是四次握手
 
-一，建立连接
+1，建立连接
 	
 	
 
-二，断开连接
+2，断开连接
+
+二，基于Http协议
+
+Http协议是基于Socket之上的协议
+1，使用HttpURLconnection连接URL
+2，利用Apache的HttpClient实现
+
+三，其他网络相关技术
+
+Android WebView可以实现：HTML->JavaScript-Java的交互，可以访问本地硬件
+
+1，webView.addJavaScriptInterFace
+
+2,在java中调用javaScript脚本方法，webView.loadUrl方法
+

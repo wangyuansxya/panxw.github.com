@@ -1,0 +1,37 @@
+---
+layout: post
+category: "other"
+title:  "线程和进程"
+tags: [线程和进程]
+---
+**线程和进程**
+
+进程间通信机制：IPC
+
+一，进程
+	
+	是并发的最小执行单眼。当前的一个活动，一个android应用程序都拥有至少一个进程，可以在其他的进程做一些后太运行操作
+	
+	前台进程
+	
+	后台进程
+	
+	　.......
+
+二，线程
+
+	每个App都有一个主线程，即UI线程，该线程上不能做耗时操作，否则程序会无响应。线程间可以互相通信，但是相互独立
+	
+三，线程的上下文切换比进程快
+
+四，线程间通信
+	
+	1，Handler：
+	2，AcyncTask：
+	3，Activity.RunOnUiThread(Runable)
+	4,View.post(Runable)
+	5,View.postDelay(Runable r, int delay)
+
+五，Handler
+
+Thread，looper(维护线程消息的循环类，相当于消息管理类)，MessageQuene（消息队列）
