@@ -1,0 +1,90 @@
+---
+layout: post
+category: "other"
+title:  "常用的SQL语句"
+tags: [常用的SQL语句]
+---
+**常用的SQL语句**
+
+常用的SQL语句
+
+一，简单查询
+	
+1，查询like语句：%表示匹配多个字符，_表示匹配一个字符
+	
+	Select name form stu where name like 's_n%'
+	
+2,查询字段内容为空或者非空的语句
+
+	Select * from stu where name is not null
+	
+3,使用逻辑操作符
+	
+	Select * from student where (age > 20 or name='i%') and eName like 'J%'
+
+4,查询字段值进行排序
+
+	Select * from stu order by age asc
+
+二，复杂查询
+
+1，数据分组
+
+	select Max(age),Min(age),Avg(age),Sum(age) from stu 
+	
+	select * from stu wher age =(select Max(age) for stu)
+	
+	select count(*) from stu
+
+2,Group By(对查询结果做分组)。Having 用于限制分组显示结果
+  	
+  	select name, age from stu group by name having age < 20 order by age desc
+  	
+3，子查询
+
+	select * from stu where id in (select id form course wer age=10)
+	
+4,分页查询
+
+	跳过10条，查9条：select * from stu limit 9 offset 10
+	查询从第一行开始的5条数据：select * from stu limit 0, 5	
+		
+三，复合查询
+
+1，左连接-1v1关系
+
+	select * from stu left Join course on stu.id=course.id
+	
+查询到的数据以左边的表为主，即stu，右表中没有查询到的返回NULL
+
+2，右连接-1v1关系
+	
+	select * from stu right Join course on stu.id=course.id
+
+查询到的数据以右边的表为主，即stu，左表中没有查询到的返回NULL
+
+3，完全连接-1v1关系(2,3=3)
+
+	select * from stu full Join course on stu.id=course.id
+	
+合并俩张表中查询到的数据，左右表中没有查询到的返回NULL
+
+4，内连接
+
+	select * from stu inner Join course on stu.id=course.id
+	
+相当于取交集，返回符合条件的数据
+
+5，交叉连接(2*3=6)
+
+	笛卡尔积:select * from stu cross Join course
+
+	select * from stu cross Join course where stu.id=course.id 相当于inner Join
+	
+6，多对多查询
+
+	select s.name, c.name from stu.course as sc left join stu as s on s.sno=sc.sno left join Course as c on c.cno=sc.cno 
+
+
+	
+	
