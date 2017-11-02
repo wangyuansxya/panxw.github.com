@@ -1,0 +1,19 @@
+---
+layout: post
+category: "android"
+title:  "一些小问题"
+tags: [一些小问题]
+---
+**移动开发网络抓包工具介绍**
+
+1,final关键字
+
+2,imageview background和scr的区别，scyletype属性
+
+3,dpi是什么意思，dp和px的区别
+
+4,必须有的用get，可以没有的用opt，然后做null check
+
+5,Condition线程通信
+
+6，BlockingDeque
