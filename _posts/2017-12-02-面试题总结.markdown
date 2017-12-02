@@ -1,0 +1,43 @@
+---
+layout: post
+category: "android"
+title:  "面试题总结"
+tags: [面试题总结]
+---
+**面试题总结**
+
+[https://zhuanlan.zhihu.com/p/25671699](https://zhuanlan.zhihu.com/p/25671699 "Android面试题集合（持续更新）")
+
+[http://ms.csdn.net/geek/196825](http://ms.csdn.net/geek/196825 "2017年4月美团Android面试总结")
+
+1，Android常见分辨率<br>
+[http://m.blog.csdn.net/sarsscofy/article/details/9249397](http://m.blog.csdn.net/sarsscofy/article/details/9249397)
+
+2，OkHttp的的优点，实现原理和架构
+
+3，ReJava+retrofit实现网络请求框架<br>
+[http://gank.io/post/560e15be2dca930e00da1083#toc_1](http://gank.io/post/560e15be2dca930e00da1083#toc_1)
+
+4，HashMap,HashTable,HashSet,TreeMap和ConCurentHashMap的区别和实现原理
+
+[http://m.blog.csdn.net/paincupid/article/details/47746341](http://m.blog.csdn.net/paincupid/article/details/47746341)
+
+5，Java的ClassLoader的理解
+
+6，单例的实现(为什么能够实现静态内部类单例？提示：ClassLoader的理解)
+
+7，Android Dalvik虚拟机和Art虚拟机的区别(just-in-time(即时编译技术), Ahead-Of-Time(预编译))
+
+8，JVM的理解,和Android虚拟机的区别。垃圾回收算法有哪些(标记清除，标记整理，分代收集算法)
+
+9，Java的四大引用（强引用，软引用，弱引用，虚引用）
+
+10，ThreadPoolExecuter的参数含义
+
+11，Http协议和Https协议的区别(SSl,对称加密和非对称加密)
+
+12，Handle的实现机制
+
+13，多线程的实现方式
+
+14，
