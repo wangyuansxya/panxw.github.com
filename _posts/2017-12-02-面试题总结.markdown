@@ -55,3 +55,9 @@ tags: [面试题总结]
 16，activity的启动模式(standard, singileInstace, Singletask, SingleTop)
 
 17,算法题：斐波那契数列,字符串翻转，不使用临时变量交换数据的值(位运算)，二叉树遍历(前序遍历，中序遍历，后续遍历)
+
+18，SurfaceView和TextureView的区别和应用场景
+
+19，Android中touch事件的传递机制
+
+20，
