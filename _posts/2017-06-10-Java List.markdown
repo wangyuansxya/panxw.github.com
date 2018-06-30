@@ -6,6 +6,8 @@ tags: [ArrayList, 区别，优缺点]
 ---
 **ArrayList Vector LinkedList的区别及其优缺点**
 
+一，特点
+
 1,ArrayList,LinkedList,Vector这三个类都实现了java.util.List接口，但它们有各自不同的特性
 
 2,ArrayList Vector内部实现都是数组，LinkedList是一个双向列表
@@ -27,3 +29,16 @@ LinkedList，推荐使用Enhanced for loop
 LinkedList适用于频繁的增删操作的情况
 
 ArrayList适用于频繁的查询操作
+
+二, 如何有效的遍历一个list
+
+1,enhanced for loop是编译的时候变成了使用iterator去调用。会创建垃圾的。但是却不可以用来做添加删除操作。
+
+2,如果是ArrayList的话，直接用普通的for循环最好。
+
+3,如果是LinkedList，不确定size的话可以先判断size是否大于0，
+
+4,有删除添加操作的话就直接用iterator
+
+5,使用普通的 for loop去遍历linkedList效率是很低的
+
