@@ -5,7 +5,10 @@
  */
 
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 60px;
+    /* Required padding for .navbar-fixed-top.
+    Remove if using .navbar-static-top.
+    Change if height of navigation changes. */
 }
 
 footer {
@@ -18,4 +21,11 @@ footer {
 	font-size:12px
 }
 
-.well-ad{min-height:20px;padding-left:5px; padding-top:5px;padding-bottom:3px;margin-bottom:20px;background-color:#f5f5f5;border:1px solid #e3e3e3;}
+.well-ad{
+    min-height:20px;
+    padding-left:5px;
+    padding-top:5px;
+    padding-bottom:3px;
+    margin-bottom:20px;
+    background-color:#f5f5f5;
+    border:1px solid #e3e3e3;}
