@@ -1,0 +1,119 @@
+---
+layout: post
+category: "android"
+title:  "Java自定义注解"
+tags: [注解，Java]
+---
+**Java自定义注解**
+
+源码注解
+编译时注解
+运行时注解	
+
+
+1，元注解：顾名思义就是用于定义注解的注解
+
+>java.lang.annotation提供了四种元注解，专门注解其他的注解（在自定义注解的时候，需要使用到元注解）：<br>
+   ● @Documented –注解是否将包含在JavaDoc中<br>
+   ● @Retention –什么时候使用该注解<br>
+   ● @Target –注解用于什么地方<br>
+   ● @Inherited – 是否允许子类继承该注解<br>
+
+1.1 @Retention – 定义该注解的生命周期
+ >●   RetentionPolicy.SOURCE : 在编译阶段丢弃。这些注解在编译结束之后就不再有任何意义，所以它们不会写入字节码。@Override, @SuppressWarnings都属于这类注解。<br>
+  ●   RetentionPolicy.CLASS : 在类加载的时候丢弃。在字节码文件的处理中有用。注解默认使用这种方式<br>
+  ●   RetentionPolicy.RUNTIME : 始终不会丢弃，运行期也保留该注解，因此可以使用反射机制读取该注解的信息。我们自定义的注解通常使用这种方式。<br>
+  
+1.2 @Target – 表示该注解用于什么地方。默认值为任何元素，表示该注解用于什么地方。可用的ElementType参数包括
+
+> ● ElementType.CONSTRUCTOR:用于描述构造器<br>
+  ● ElementType.FIELD:成员变量、对象、属性（包括enum实例）<br>
+  ● ElementType.LOCAL_VARIABLE:用于描述局部变量<br>
+  ● ElementType.METHOD:用于描述方法<br>
+  ● ElementType.PACKAGE:用于描述包<br>
+  ● ElementType.PARAMETER:用于描述参数<br>
+  ● ElementType.TYPE:用于描述类、接口(包括注解类型) 或enum声明<br>
+
+1.3 @Documented - 一个简单的Annotations标记注解，表示是否将注解信息添加在java文档中。
+
+1.4 @Inherited – 定义该注释和子类的关系
+
+  > ● @Inherited 元注解是一个标记注解，@Inherited阐述了某个被标注的类型是被继承的。<br>
+    ● 如果一个使用了@Inherited修饰的annotation类型被用于一个class，则这个annotation将被用于该class的子类。<br>
+
+2,常见标准的Annotation：
+
+2.1 Override
+> ● java.lang.Override是一个标记类型注解，它被用作标注方法。<br>
+● 它说明了被标注的方法重载了父类的方法，起到了断言的作用。<br>
+● 如果我们使用了这种注解在一个没有覆盖父类方法的方法时，java编译器将以一个编译错误来警示。<br>
+
+2.2 Deprecated
+> ● Deprecated也是一种标记类型注解。当一个类型或者类型成员使用@Deprecated修饰的话，编译器将不鼓励使用这个被标注的程序元素。<br>
+● 所以使用这种修饰具有一定的“延续性”：如果我们在代码中通过继承或者覆盖的方式使用了这个过时的类型或者成员，<br>
+● 虽然继承或者覆盖后的类型或者成员并不是被声明为@Deprecated，但编译器仍然要报警。<br>
+
+2.3 SuppressWarnings
+>● SuppressWarning不是一个标记类型注解。<br>
+● 它有一个类型为String[]的成员，这个成员的值为被禁止的警告名。<br>
+● 对于javac编译器来讲，被-Xlint选项有效的警告名也同样对@SuppressWarings有效，同时编译器忽略掉无法识别的警告名。<br>
+● @SuppressWarnings("unchecked")<br>
+
+
+3,自定义注解
+
+    @Retention(RetentionPolicy.RUNTIME)//什么时候使用该注解
+    @Target(ElementType.FIELD)//注解用于什么地方
+    @Documented//注解是否将包含在JavaDoc中
+    @Inherited//是否允许子类继承该注解
+    public @interface MyAnnoation {
+        int value();
+        String str() default "value2";
+        int[] arr();
+    }
+
+3.1 定义一个注解
+    
+    @Documented
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.FIELD)
+    public @interface Friut {
+    
+        enum Color { BLUE, RED, GREEN};
+    
+        /**
+         * 水果颜色
+         * @return
+         */
+        Color fruitColor() default Color.RED;
+    
+    }
+
+3.2自定义运行时注解（编译时注解和运行时注解有点像Android虚拟机art和Dalvik的区别，预加载和运行时加载）
+
+定义注解->使用注解->使用反射获取注解数据
+
+3.3自定义编译时注解
+定义注解->定义注解处理器(生成相应注解文件)->想jvm注册注解处理器->获取注解文件数据
+
+
+1，注解分类
+标记注解
+编译时注解
+运行时注解	
+	
+2，标记注解
+
+	
+	
+3，编译时注解
+
+	自定义注解解析，继承
+	反射来实现
+	
+4，运行时注解
+
+>使用反射获取对象，然后做具体的操作
+    
+    
+    
